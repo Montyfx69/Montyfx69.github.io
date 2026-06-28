@@ -1,0 +1,62 @@
+/* 1. Global Styles & Background Setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Smooth gradient from high-tone (deep) purple to light purple, transitioning to blue */
+    background: linear-gradient(135deg, #2e0854 0%, #6a1b9a 50%, #1e88e5 100%);
+    background-attachment: fixed; /* Keeps background steady while scrolling */
+    
+    /* General text color for the website */
+    color: #ffffff; 
+    line-height: 1.6;
+}
+
+/* 2. Forex Chart Background Overlay */
+/* This creates a faint, faded chart watermark behind everything */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Standard stock/forex chart pattern placeholder image */
+    background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1920'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* Fades the image dramatically so it doesn't clash with your text */
+    opacity: 0.07; 
+    mix-blend-mode: overlay;
+    z-index: -1; /* Pushes it behind all text and content */
+    pointer-events: none;
+}
+
+/* 3. Typography & Text Formatting */
+p, li, span, h2, h3, h4 {
+    color: #ffffff; /* Ensures all regular print is crisp white */
+}
+
+/* 4. The Monty_FX Specific Branding Rule */
+/* Add the class 'monty-brand' to any text/heading using the company name */
+.monty-brand {
+    color: #000000 !important; /* Black filament/fill */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Creates the gold edges (1px width) */
+    -webkit-text-stroke: 1.5px #ffd700; 
+    text-stroke: 1.5px #ffd700;
+    
+    /* Drop shadow to make the gold edges pop against the dark background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* 5. Clean Layout Container (Optional but helpful) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
